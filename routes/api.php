@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('getCount', 'App\Http\Controllers\CounterController@getCount');
+Route::post('incrementCount', 'App\Http\Controllers\CounterController@incrementCount');
