@@ -12,10 +12,13 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_the_application_returns_a_successful_response()
+    public function test_if_get_count_returns_successfully()
     {
-        $response = $this->get('/');
+        $response =  $response = $this->get('/api/getCount')
+            ->assertStatus(200);
 
-        $response->assertStatus(200);
+        $this->assertIsObject(
+            $response
+        );
     }
 }
