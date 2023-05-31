@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Counter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Response;
 
 class CounterController extends Controller
 {
@@ -17,7 +18,7 @@ class CounterController extends Controller
         ->update([
             'count' => DB::raw('count + 1'),
         ]);
-        return Response::json(['success' => $result], 200);
+        return response('Count Incremented', 200);
     }
 
     /**
